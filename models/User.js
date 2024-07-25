@@ -4,9 +4,11 @@ const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
 
 
-class User extends Model {
-
-};
+class User extends Model  {
+    checkPassword(loginPw) {
+      return bcrypt.compareSync(loginPw, this.password);
+    }
+  };
 
 
 User.init(
@@ -27,14 +29,29 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [1],
+                len: [8],
             }
         },
     },
 
      {
-            hooks {},
-            sequelize,
+        hooks: {
+            async beforeCreate(newUserInfo) {
+                newUserInfo.password = await bcrypt.hash(newUserInfo.password, 10);
+                return newUserInfo
+            },
+            async beforeUpdate(updatedUserInfo) {
+                updatedUserInfo.password = await bcrypt.hash(updatedUserInfo.password, 10);
+                return updatedUserInfo;
+            },
+        }, 
+
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'User'
+
         }
 );
 

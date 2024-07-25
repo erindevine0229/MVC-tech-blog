@@ -6,11 +6,11 @@ let sequelize;
 sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
-    process.env.DB-isStrongPassword,
+    process.env.DB_PASSWORD,
     {
         host: 'localhost',
         dialect: 'postgres',
-        port: PORT,
+        port: 3456,
       }
 );
 
