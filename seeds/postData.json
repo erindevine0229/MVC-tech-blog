@@ -1,0 +1,14 @@
+[
+    {
+        "post_title": "CSS is terrible",
+        "post_content": "Guys I cannot stand CSS at all. Flexbox will surely be the end of me! Have any tips on how to make it less miserable?",
+        "user_id": 1
+
+    },
+
+    {
+        "post_title": "MVC file structuring",
+        "post_content": "Honestly I was very intimidated at first about how many folders and files there are in MVC but it is actually a great way to have separation of concerns and I'm getting used to it.",
+        "user_id": 3
+    }
+]

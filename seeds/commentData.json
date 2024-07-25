@@ -1,0 +1,19 @@
+[
+    {
+        "comment_text": "Saaaameee! CSS is so hard. I learned some from Youtube videos and playing Flexbox Froggy.",
+        "post_id": 1,
+        "user_id": 2
+    },
+
+    {
+        "comment_text": "I agree! So scary at first but actually so helpful.",
+        "post_id": 2,
+        "user_id": 3
+    },
+
+    {
+        "comment_text": "I am just learning about using Tailwind and Bootstrap to try to offload some of the CSS stress.",
+        "post_id": 1,
+        "user_id": 3
+    }
+]
