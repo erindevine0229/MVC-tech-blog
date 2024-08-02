@@ -1,0 +1,13 @@
+:root {
+    --main-black: rgba(0, 0, 0, 0.716);
+    --main-grey: rgb(176, 171, 171);
+    --main-green: rgb(191, 218, 191);
+}
+
+header {
+    background-color: var(--main-black);
+}
+
+body {
+    background-color: var(--main-green);
+}
