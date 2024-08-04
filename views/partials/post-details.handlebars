@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="post-heading">
+        <span><a href="/post/{{id}}">{{title}}</a></span><span style="float:right">Posted by {{user.username}} on {{format_date created_on}}</span><br>
+    </div>
+    <div class="post-body">
+        <p>{{post_content}}</p>
+    </div>
+    <div class="comments">
+           <span style="float:right">
+        {{#each comments as |comment|}}
+            {{comment.comment_text}}
+            -{{comment.user.id}} on {{comment.created_on}}
+        {{/each}}
+        {{comments.length}} {{format_plural "comment" comments.length}}
+    </span>
+    </div>
+
+</div>
