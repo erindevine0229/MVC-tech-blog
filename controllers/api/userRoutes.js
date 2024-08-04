@@ -9,7 +9,6 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 router.post('/', (req,res) => {
     User.create({
         username: req.body.username,
-        email: req.body.email,
         password: req.body.password
     })
 
@@ -35,12 +34,12 @@ router.post('/login', (req, res) => {
     
     User.findOne({
         where: {
-            email: req.body.email
+            username: req.body.username
         }
 })
     .then(dbUserData => {
         if(!dbUserData) {
-            res.status(400).json({message: "Unable to locate a user with that email. Try again or signup." });
+            res.status(400).json({message: "Unable to locate a user with that username. Try again or signup." });
             return;
         }
 
@@ -71,6 +70,8 @@ router.post('/logout', withAuth, (req, res) => {
       res.status(404).end();
     }
 });
+
+
 
 
 module.exports = router;

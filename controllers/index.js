@@ -8,7 +8,7 @@ const dashRoutes = require("./dashRoutes.js");
 
 const withAuth = require("../utils/auth.js");
 
-router.use("/api", apiRoutes);
+router.use("/api", withAuth, apiRoutes);
 
 router.use("/", homeRoutes);
 
