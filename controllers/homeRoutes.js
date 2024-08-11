@@ -5,7 +5,8 @@ const { Post, User, Comment } = require('../models');
 // This route will return the homepage which will include all the current blog Posts
 router.get('/', (req,res) => {
     Post.findAll({
-        attributes: ['id', 'post_title', 'post_content', 'created_on'],
+        
+        attributes: ['id', 'post_title', 'post_content'],
 
         order: [[ 'created_at', 'DESC']],
 
@@ -17,30 +18,30 @@ router.get('/', (req,res) => {
 
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_on'],
+                attributes: ['id', 'comment_text', 'post_id', 'user_id'],
                 include: {
                     model: User,
                     attributes: ['username']
                 }
             }
         ]
+        
+    })
 
-})
+    .then(dbPostData => {
+        const allPosts = [];
+        for (let i = 0; i < dbPostData.length; i++) {
+            Allposts.push(dbPostData[i].get({ plain: true }));
+        }
 
-.then(dbPostData => {
-    const allPosts = [];
-    for (let i = 0; i < dbPostData.length; i++) {
-        Allposts.push(dbPostData[i].get({ plain: true }));
-}
+        res.render('homepage', {
+            allPosts, 
+            loggedIn: req.session.loggedIn
+            });
+    })
 
-res.render('homepage', {
-    allPosts, 
-    loggedIn: req.session.loggedIn
-    });
-})
-
-.catch(err => {
-    console.log(err);
+    .catch(err => {
+        console.log(err);
         res.status(500).json(err);
     });
 });
@@ -54,7 +55,7 @@ router.get('/post/:id', (req, res) => {
             id: req.params.id
         },
 
-        attributes: ['id', 'post_content', 'post_title', 'created_on'],
+        attributes: ['id', 'post_content', 'post_title'],
 
         include: [
             {
@@ -62,7 +63,7 @@ router.get('/post/:id', (req, res) => {
                 attributes: ['username'],
                 include: {
                     model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_on'],
+                    attributes: ['id', 'comment_text', 'post_id', 'user_id'],
                     include: {
                         model: User,
                         attributes: ['username']

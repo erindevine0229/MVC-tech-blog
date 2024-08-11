@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../../models');
+const { User } = require('../../models');
 const session = require('express-session');
 const withAuth = require('../../utils/auth');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -70,8 +70,6 @@ router.post('/logout', withAuth, (req, res) => {
       res.status(404).end();
     }
 });
-
-
 
 
 module.exports = router;

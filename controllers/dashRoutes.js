@@ -12,12 +12,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
             user_id: req.session.user_id
         },
 
-        attributes: ['id', 'post_content', 'post_title', 'created_on'],
+        attributes: ['id', 'post_content', 'post_title'],
 
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_on'],
+                attributes: ['id', 'comment_text', 'post_id', 'user_id'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -46,3 +46,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
             res.status(500).json(err);
         })
 });
+
+
+module.exports = router;
