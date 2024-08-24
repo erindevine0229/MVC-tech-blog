@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 // Route to rdisplay all posts from the logged in user based on their user id
 
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
 
     Post.findAll({
 

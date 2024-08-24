@@ -1,0 +1,21 @@
+
+{{#if loggedIn}}
+<form class="add-post-form">
+  <div>
+    <input id="add-post-title" type="text" value="{{post.title}}"/>
+  </div>
+  <div>
+    <textarea id="add-post-content"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+{{/if}}
+
+{{> post-details post}}
+
+{{#if loggedIn}}
+<script src="/javascript/create-post.js"></script>
+{{/if}}

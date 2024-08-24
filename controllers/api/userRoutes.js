@@ -7,6 +7,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 //  Route to add a new user (via signup)
 
 router.post('/', (req,res) => {
+    console.log("creating user")
     User.create({
         username: req.body.username,
         password: req.body.password
@@ -17,7 +18,7 @@ router.post('/', (req,res) => {
             req.session.user_id = dbUserData.id;
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;
-
+            console.log(req.session);
             res.json(dbUserData);
 
         });
