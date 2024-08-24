@@ -37,7 +37,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 
     res.render('dashboard', {
-        allPosts, 
+        allUserPosts, 
         loggedIn: req.session.loggedIn
         });
     })
