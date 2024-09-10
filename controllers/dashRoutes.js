@@ -35,7 +35,7 @@ router.get('/', withAuth, async (req, res) => {
         for (let i = 0; i < dbPostData.length; i++) {
             allUserPosts.push(dbPostData[i].get({ plain: true }));
     }
-
+    console.log(allUserPosts);
     res.render('dashboard', {
         allUserPosts, 
         loggedIn: req.session.loggedIn

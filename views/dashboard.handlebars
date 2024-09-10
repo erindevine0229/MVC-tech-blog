@@ -1,12 +1,12 @@
-{{#each posts as |post|}}
+{{#each allUserPosts as |post|}}
 
 <div class="blog-post-container">
     <h2>
-        <a class="post-title" href="/post/{{post.id}}">{{post.title}}</a>
-        <p>Posted by: {{post.user_id.username}} on {{created_on}}</p>
+        <a class="post-title" href="/post/{{id}}">{{post.post_title}}</a>
+        <p>Posted by: {{post.User.username}}</p>
     </h2>
-    <p>{{post_content}}</p>
+    <p>{{post.post_content}}</p>
 </div>
-<button type="submit" class="add-post-btn">Create</button>
 
 {{/each}}
+<button type="submit" class="add-post-btn"><a href="/add-post">Create Post</a></button>

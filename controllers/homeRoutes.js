@@ -31,9 +31,8 @@ router.get('/', (req,res) => {
     .then(dbPostData => {
         const allPosts = [];
         for (let i = 0; i < dbPostData.length; i++) {
-            Allposts.push(dbPostData[i].get({ plain: true }));
+            allPosts.push(dbPostData[i].get({ plain: true }));
         }
-
         res.render('homepage', {
             allPosts, 
             loggedIn: req.session.loggedIn
@@ -114,6 +113,15 @@ router.get('/signup', (req, res) => {
         return;
     } else {
         res.render('signup');
+    }
+});
+
+router.get('/add-post', (req, res) => {
+    if (req.session.loggedIn) {
+        res.render('add-post', {loggedIn: req.session.loggedIn});
+        return;
+    } else {
+        res.redirect('/');
     }
 });
 

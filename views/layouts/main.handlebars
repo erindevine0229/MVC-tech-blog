@@ -10,7 +10,7 @@
     <header id="main-header">
         <nav>
         <ul class="main-nav">
-            <a href="/homepage">Home</a>
+            <a href="/">Home</a>
             <a href="/dashboard">Dashboard</a>
             <a href="/login">Login</a>
         </ul>
@@ -20,8 +20,10 @@
     <main>
         {{{ body }}}
     </main>
-    <footer>
-
-    </footer>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 </html>
+
+
