@@ -80,7 +80,7 @@ router.get('/post/:id', (req, res) => {
 
         const selectedPostData = dbPostData.get({ plain: true });
 
-        res.render('blogpost', {
+        res.render('edit-post', {
             selectedPostData,
             loggedIn: req.session.loggedIn
         });
@@ -124,6 +124,7 @@ router.get('/add-post', (req, res) => {
         res.redirect('/');
     }
 });
+
 
 
 

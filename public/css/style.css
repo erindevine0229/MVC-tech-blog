@@ -130,3 +130,108 @@ padding: 10px 15px;
     margin: 10px;
 
 }
+
+
+/* CREATE POST PAGE */
+
+#add-container {
+    margin: 30px 100px;
+}
+
+.add-post-form {
+    border: 2px solid black;
+    padding-left: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#add-form-title {
+    padding: 10px;
+    background-color: var(--main-black);
+    color: var(--main-green);
+    margin: 0;
+}
+
+.add-post-form textarea, .add-post-form input {
+    margin: 20px;
+    height: 60px;
+    width: 1330px;
+}
+
+.add-post-form label {
+    font-size: 20px;
+    display: block;
+    margin-top: 10px;
+    margin-left: 20px;
+
+}
+
+.add-post-form button {
+    background-color: rgb(97, 94, 94);
+    color: var(--main-green);
+    height: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 1330px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Post containers */
+
+.post-container {
+    border: 2px solid black;
+    margin: 80px;
+
+}
+
+.post-heading {
+    background-color: var(--main-black);
+    color: var(--main-green);
+    padding: 10px;
+    
+}
+
+#post-title {
+    font-weight: bold;
+    font-size: 25px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.post-body {
+    margin: 20px;
+}
+
+.comments {
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Dashboard styling */
+
+.add-post-btn {
+    height: 60px;
+    width: 180px;
+    background-color: var(--main-black);
+    color: inherit;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    border-radius: 10px;
+}
+
+.add-post-btn a {
+    color: inherit;;
+    text-decoration: none;
+}
+
+#flexbox-add-btn {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    margin-top: 250px;
+}

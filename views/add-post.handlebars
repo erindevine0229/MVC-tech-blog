@@ -1,21 +1,21 @@
 
 {{#if loggedIn}}
+<div id="add-container">
+<h2 id="add-form-title">Create New Post:</h2>
 <form class="add-post-form">
+
   <div>
+     <label for="add-post-title">Post Title:</label>
     <input id="add-post-title" type="text" value="{{post.title}}"/>
   </div>
   <div>
+    <label for="add-post-content">Content:</label>
     <textarea id="add-post-content"></textarea>
   </div>
 
   <div>
-    <button type="submit">Submit</button>
+    <button type="submit">Create</button>
   </div>
 </form>
-{{/if}}
-
-{{> post-details post}}
-
-{{#if loggedIn}}
-<script src="/javascript/create-post.js"></script>
-{{/if}}
+</div>
+{{/if }}
