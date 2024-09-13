@@ -1,6 +1,6 @@
-<h2>Edit Post</h2>
+<h2>Add a Comment</h2>
 
-<form class="edit-post-form">
+{{!-- <form class="edit-post-form">
     <div>
         <input id="edit-post-title" type="text" value="{{post.title}}"/>
     </div>
@@ -10,10 +10,12 @@
     <div>
         Posted by {{post.username}}
     </div>
-</form>
+</form> --}}
 
   <form class="new-comment-form">
+        <div id="comment-header">
         <label for="comment-text">Comment:</label>
-        <textarea id="comment-text" name="comment-text"></textarea>
-        <button type="submit">Submit</button>
+        </div>
+        <textarea id="new-comment-content" name="comment-text"></textarea>
+        <button id="new-post-submit" type="submit">Submit</button>
     </form>

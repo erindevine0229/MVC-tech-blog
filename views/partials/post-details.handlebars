@@ -2,16 +2,22 @@
     <div class="post-heading">
         <span><a id="post-title" href="/post/{{id}}">{{post_title}}</a></span><span style="float:right">Posted by {{User.username}}</span><br>
     </div>
+
+    
     <div class="post-body">
         <p>{{post_content}}</p>
     </div>
-    <div class="comments">
+</div>
+<div class="comment-container">
+        <div id="blank-header">
+        </div>
+        <div class="comments">
            <span style="float:left">
         {{#each Comments as |comment|}}
             {{comment.comment_text}}
             -{{User.username}}
         {{/each}}
-    </span>
+        </span>
+        </div>
     </div>
 
-</div>

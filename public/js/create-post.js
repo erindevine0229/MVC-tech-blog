@@ -1,9 +1,10 @@
 async function handleNewPostForm(event) {
     event.preventDefault();
 
-    const postTitle = document.getElementById('add-post-title').value;
-    const postContent = document.getElementById('add-post-content').value;
+    const postTitle = document.getElementById('add-post-title').value.trim();
+    const postContent = document.getElementById('add-post-content').value.trim();
 
+    if (postTitle && postContent) {
     const response = await fetch('/api/posts', {
         method: 'POST',
         body: JSON.stringify({
@@ -13,7 +14,8 @@ async function handleNewPostForm(event) {
         headers: {
             'Content-Type': 'application/json'
         }
-    });
+    })
+};
 
     if (response.ok) {
         document.location.replace('/dashboard');
@@ -23,3 +25,4 @@ async function handleNewPostForm(event) {
 }
 
 document.getElementById('add-post-form').addEventListener('submit', handleNewPostForm);
+
