@@ -6,13 +6,13 @@ This is a full stack web application using MVC framework and RESTful API to crea
 
 ## Installation
 
-On the developer side, run the commands "npm run seed" and "npm run start" in order to lunach the server. Then navigate to the PORT in your browser in order to use the application.
+On the developer side, run the command 'npm run dev" which rull run "npm run seed" and "npm run start" in order to launch the server. Then navigate to the PORT in your browser in order to use the application.
 
 ## Usage
 
 In order to use this application, use the nav bar and forms in order to perform desired functions. A user must sign up prior to performing other functions. 
 
-Link to Deployed site on Render:
+Link to Deployed site on Render: https://mvc-tech-blog-r0da.onrender.com/
 
 ## Credits
 
